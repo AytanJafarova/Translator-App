@@ -1,0 +1,42 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.containerPage {
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(to bottom left, #8dc7e2, #1434A4);
+}
+
+#loading {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: #6495ED url('../css/img/load.gif') no-repeat center;
+    z-index: 9999;
+    background-size: 4rem 4rem;
+}
+
+form {
+    background: none;
+    border: solid 1px #6495ED 2%;
+    height: 100vh;
+}
+
+.containerPage {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    padding-top: 5rem;
+}
+
+.containerTo {
+    margin-top: 1rem;
+}
+
+.containerArrow {
+    display: flex;
+    justify-content: center;
+}

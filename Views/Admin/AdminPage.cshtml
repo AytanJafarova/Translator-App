@@ -1,0 +1,178 @@
+﻿@model TranslatorApp.Models.WordModel
+
+<link rel="stylesheet" href="/css/adminPgStyle.css"> 
+
+<!-- Update Modal -->
+<div class="modal fade" id="updateModal" tabindex="-1" aria-labelledby="updateModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header justify-content-end">
+          <h5>Yenilə</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+         <form asp-action="UpdateWord" asp-controller="Admin" method="post" autocomplete="off">
+        <div class="modal-body">
+                <div class="form-group mt-1">
+                  <label for="azeWord" class="text-primary">Azərbaycanca</label>
+                  <input  type="text" class="form-control" id="azeUp" disabled>
+                  <input asp-for="WordAzeSelected" class="d-none" type="text" id="azeUpHidden">
+                </div>
+                <div class="form-group mt-2">
+                  <label for="turkWord" class="text-primary">Türkcə</label>
+                  <input asp-for = "wordtoupdate.Turkce" type="text" class="form-control" id="trUp">
+                </div>
+                <div class="form-group mt-2">
+                  <label for="ozbekWord" class="text-primary">Özbəkcə</label>
+                  <input asp-for = "wordtoupdate.Ozbekce" type="text" class="form-control" id="ozbekUp">
+                </div>
+                <div class="form-group mt-2">
+                  <label for="qirgizWord" class="text-primary">Qırğızca</label>
+                  <input asp-for = "wordtoupdate.Qirgizca" type="text" class="form-control" id="qirgizUp">
+                </div>
+                <div class="form-group mt-2">
+                  <label for="tatarWord" class="text-primary">Tatarca</label>
+                  <input asp-for = "wordtoupdate.Tatarca" type="text" class="form-control" id="tatarUp">
+                </div>
+                <div class="form-group mt-2">
+                  <label for="turkmenWord" class="text-primary">Türkməncə</label>
+                  <input asp-for = "wordtoupdate.Turkmence" type="text" class="form-control" id="turkmenUp">
+                </div>
+                <div class="form-group mt-2">
+                  <label for="uygurWord" class="text-primary">Uyğurca</label>
+                  <input asp-for = "wordtoupdate.Uygurca" type="text" class="form-control" id="uygurUp">
+                </div>
+                 <div class="form-group mt-2">
+                  <label for="qazaxWord" class="text-primary">Qazaxca</label>
+                  <input asp-for = "wordtoupdate.Qazaxca" type="text" class="form-control" id="qazaxUp">
+                </div>
+        </div>
+        <div class="modal-footer justify-content-center">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Ləğv et</button>
+          <button type="submit" class="btn btn-primary">Yadda saxla</button>
+        </div>
+          </form>
+      </div>
+    </div>
+</div>
+
+<!-- Delete Modal -->
+<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header justify-content-end">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+      <form asp-action="DeleteWord" asp-controller="Admin" method="post" autocomplete="off">
+           <div class="modal-body">
+               <h5 class="text-center">Söz birdəfəlik silinəcək</h5>
+                 <input asp-for="WordAzeSelected" class="d-none" type="text" id="azeDeleteHidden">
+            </div>
+        <div class="modal-footer justify-content-center">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Ləğv et</button>
+          <button type="submit" class="btn btn-danger" asp-action="DeleteWord" asp-controller="Admin">Sil</button>
+        </div>
+      </form>
+      </div>
+    </div>
+</div>
+
+<!-- Add Modal -->
+<div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="addModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header justify-content-end">
+        <h5 class="modal-title">Yeni söz</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+       <form asp-action="AddWord" asp-controller="Admin" method="post" autocomplete="off">
+          <div class="modal-body">
+                  <div class="form-group mt-1">
+                    <input asp-for = "wordtoadd.Azerbaycanca" type="text" class="form-control" id="azeAdd" placeholder="Azərbaycanca" required>
+                  </div>
+                  <div class="form-group mt-2">
+                    <input asp-for = "wordtoadd.Turkce" type="text" class="form-control" id="trAdd" placeholder="Türkcə">
+                  </div>
+                  <div class="form-group mt-2">
+                    <input asp-for = "wordtoadd.Ozbekce" type="text" class="form-control" id="ozbekAdd" placeholder="Özbəkcə">
+                  </div>
+                  <div class="form-group mt-2">
+                    <input asp-for = "wordtoadd.Qirgizca" type="text" class="form-control" id="qirgizAdd" placeholder="Qırğızca">
+                  </div>
+                  <div class="form-group mt-2">
+                    <input asp-for = "wordtoadd.Tatarca" type="text" class="form-control" id="tatarAdd" placeholder="Tatarca">
+                  </div>
+                  <div class="form-group mt-2">
+                    <input asp-for = "wordtoadd.Turkmence" type="text" class="form-control" id="turkmenAdd" placeholder="Türkməncə">
+                  </div>
+                  <div class="form-group mt-2">
+                    <input asp-for="wordtoadd.Uygurca" type="text" class="form-control" id="uygurAdd" placeholder="Uyğurca">
+                  </div>
+                  <div class="form-group mt-2">
+                    <input asp-for= "wordtoadd.Qazaxca" type="text" class="form-control" id="qazaxAdd" placeholder="Qazaxca">
+                  </div>
+                  <div class="form-group mt-2 text-info" style="color:red;" id="lessInput">Ən az bir xarici dil daxil edin!</div>
+            </div>
+          <div class="modal-footer justify-content-center">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Ləğv et</button>
+            <button type = "submit" id="addWordBtn" class="btn btn-success">Əlavə et</button>
+          </div>
+       </form>
+    </div>
+  </div>
+</div>
+
+    @*Main Body*@
+
+    <div class="containerPage pt-4">
+       <div class="container d-flex" style="justify-content: left;">
+         <a asp-controller ="Translator" asp-action="Translating" class="btn btn-secondary">Tərcümə et</a>
+       </div>
+      <div class="addContainer container d-flex" style="justify-content: center;">
+        <button onclick="addWord()" data-bs-toggle="modal" data-bs-target="#addModal"  type="button" class="btn btn-light btn-lg btn-block" style="width: 20rem;">Yeni söz əlavə et</button>
+       </div>
+       <div class="tableContainer">
+        <div class="container table-responsive pt-5">
+          <table id="tableWord" class="table table-fixed" >
+              <thead>
+                  <tr>
+                      <th>№</th>
+                      <th>Azərbaycanca</th>
+                      <th>Türkcə</th>
+                      <th>Özbəkcə</th>
+                      <th>Qırğızca</th>
+                      <th>Tatarca</th>
+                      <th>Türkməncə</th>
+                      <th>Uyğurca</th>
+                      <th>Qazaxca</th>
+                      <th>Redaktə et</th>
+                  </tr>
+              </thead>
+              <tbody id="tableWordBody">
+                    @{
+                        var counter =  1 ;
+                    }
+                 @foreach (var word in Model.wordtolist)
+                {
+                    <tr>
+                        <td>@counter</td>
+                        <td>@word.Azerbaycanca</td>
+                        <td>@word.Turkce</td>
+                        <td>@word.Ozbekce</td>
+                        <td>@word.Qirgizca</td>
+                        <td>@word.Tatarca</td>
+                        <td>@word.Turkmence</td>
+                        <td>@word.Uygurca</td>
+                        <td>@word.Qazaxca</td>
+                        <td>
+                            <i onclick="updateFill(this)" data-bs-toggle="modal" data-bs-target="#updateModal" class="fas fa-edit btn-update" title="Update"></i>
+                            <i onclick="deleteWord(this)" data-bs-toggle="modal" data-bs-target="#deleteModal" class="fas fa-trash-alt btn-delete" title="Delete"></i>
+                        </td>
+                        </tr>
+                        counter++;
+                    }
+                  </tbody>
+          </table>
+         </div>
+       </div>
+    </div>
+    <script src=~/js/crudAdmin.js></script>

@@ -1,0 +1,28 @@
+﻿@model TranslatorApp.Models.adminloginmodel
+
+<link rel="stylesheet" href="/css/style.css">
+ <div class="containerPage">
+      <div class="containerLogin">
+        <div class="card" style="width: 25rem;">
+          <img class="card-img-top" src="/css/img/choice.gif" alt="Card image cap">
+          <div class="card-body">
+           <form action="AdminLogin" method="post" autocomplete="off">
+            <div class="form-group mt-2">
+                <label for="adminUsername">Admin</label>
+                <input asp-for="username" type="text" name="username" class="form-control" placeholder="Admin" required>
+            </div>
+            <div class="form-group mt-2">
+                <label for="adminPassword">Şifrə</label>
+                <input asp-for="password" type="password" name="password" class="form-control" placeholder="Şifrə" required>
+            </div>
+            <div class="form-group mt-2 @(ViewBag.ErrorMessage != null ? "" : "d-none")" style="color:red;" id="txtError">Məlumatları düzgün daxil edin!</div>
+            <button type="submit" class="btn btn-primary mt-2" style="width: 100%;">Daxil ol</button>
+          </form>
+      </div>
+      </div>
+    </div>
+    </div>
+    <script src="/js/script.js"></script>
+    <script>
+        console.log(@ViewBag.Message);
+    </script>
