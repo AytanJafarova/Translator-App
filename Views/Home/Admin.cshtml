@@ -16,13 +16,10 @@
                 <input asp-for="password" type="password" name="password" class="form-control" placeholder="Şifrə" required>
             </div>
             <div class="form-group mt-2 @(ViewBag.ErrorMessage != null ? "" : "d-none")" style="color:red;" id="txtError">Məlumatları düzgün daxil edin!</div>
-            <button type="submit" class="btn btn-primary mt-2" style="width: 100%;">Daxil ol</button>
+            <button type="submit" class="btn btn-success mt-2" style="width: 100%;">Daxil ol</button>
           </form>
       </div>
       </div>
     </div>
     </div>
     <script src="/js/script.js"></script>
-    <script>
-        console.log(@ViewBag.Message);
-    </script>

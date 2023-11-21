@@ -13,7 +13,7 @@ namespace TranslatorApp.DataAccessLayer.TranslatorDbContext
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Word>()
-          .HasIndex(e => e.Azerbaycanca)
+          .HasIndex(e => e.Azerbaycan)
           .IsUnique();
 
             base.OnModelCreating(modelBuilder);

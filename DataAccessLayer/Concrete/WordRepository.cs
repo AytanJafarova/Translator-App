@@ -21,7 +21,10 @@ namespace TranslatorApp.DataAccessLayer.Concrete
         public void Delete(int id)
         {
             var word = _translateDbContext.Words.Find(id);
-            _translateDbContext.Words.Remove(word);
+            if(word != null)
+            {
+                _translateDbContext.Words.Remove(word);
+            }
             _translateDbContext.SaveChanges();
         }
 
@@ -39,7 +42,7 @@ namespace TranslatorApp.DataAccessLayer.Concrete
         {
             return _translateDbContext.Words
                .AsNoTracking() 
-               .Where(w => w.Azerbaycanca == word)
+               .Where(w => w.Azerbaycan == word)
                .Select(w => w.WordId)
                .FirstOrDefault();
         }
@@ -50,28 +53,22 @@ namespace TranslatorApp.DataAccessLayer.Concrete
             switch (fromL)
             {
                 case "Azərbaycan":
-                    queryFrom = _translateDbContext.Words.AsNoTracking().Where(w => w.Azerbaycanca == word).FirstOrDefault();
+                    queryFrom = _translateDbContext.Words.AsNoTracking().Where(w => w.Azerbaycan == word).FirstOrDefault();
                     break;
                 case "Türk":
-                    queryFrom = _translateDbContext.Words.AsNoTracking().Where(w => w.Turkce == word).FirstOrDefault();
+                    queryFrom = _translateDbContext.Words.AsNoTracking().Where(w => w.Turk == word).FirstOrDefault();
                     break;
                 case "Özbək":
-                    queryFrom = _translateDbContext.Words.AsNoTracking().Where(w => w.Ozbekce == word).FirstOrDefault();
-                    break;
-                case "Qırğız":
-                    queryFrom = _translateDbContext.Words.AsNoTracking().Where(w => w.Qirgizca == word).FirstOrDefault();
-                    break;
-                case "Tatar":
-                    queryFrom = _translateDbContext.Words.AsNoTracking().Where(w => w.Tatarca == word).FirstOrDefault();
-                    break;
-                case "Türkmən":
-                    queryFrom = _translateDbContext.Words.AsNoTracking().Where(w => w.Turkmence == word).FirstOrDefault();
+                    queryFrom = _translateDbContext.Words.AsNoTracking().Where(w => w.Ozbek == word).FirstOrDefault();
                     break;
                 case "Qazax":
-                    queryFrom = _translateDbContext.Words.AsNoTracking().Where(w => w.Qazaxca == word).FirstOrDefault();
+                    queryFrom = _translateDbContext.Words.AsNoTracking().Where(w => w.Qazax == word).FirstOrDefault();
                     break;
-                case "Uyğur":
-                    queryFrom = _translateDbContext.Words.AsNoTracking().Where(w => w.Uygurca == word).FirstOrDefault();
+                case "Latın":
+                    queryFrom = _translateDbContext.Words.AsNoTracking().Where(w => w.Latin == word).FirstOrDefault();
+                    break;
+                case "Rus":
+                    queryFrom = _translateDbContext.Words.AsNoTracking().Where(w => w.Rus == word).FirstOrDefault();
                     break;
                 case "emp":
                     return "Dili seçin!";
@@ -86,28 +83,22 @@ namespace TranslatorApp.DataAccessLayer.Concrete
             switch (toL)
             {
                 case "Azərbaycan":
-                    translation = queryFrom.Azerbaycanca;
+                    translation = queryFrom.Azerbaycan;
                     break;
                 case "Türk":
-                    translation = queryFrom.Turkce;
+                    translation = queryFrom.Turk;
                     break;
                 case "Özbək":
-                    translation = queryFrom.Ozbekce;
-                    break;
-                case "Qırğız":
-                    translation = queryFrom.Qirgizca;
-                    break;
-                case "Tatar":
-                    translation = queryFrom.Tatarca;
-                    break;
-                case "Türkmən":
-                    translation = queryFrom.Turkmence;
+                    translation = queryFrom.Ozbek;
                     break;
                 case "Qazax":
-                    translation = queryFrom.Qazaxca;
+                    translation = queryFrom.Qazax;
                     break;
-                case "Uyğur":
-                    translation = queryFrom.Uygurca;
+                case "Latın":
+                    translation = queryFrom.Latin;
+                    break;
+                case "Rus":
+                    translation = queryFrom.Rus;
                     break;
                 case "emp":
                     return "Dili seçin!";
@@ -115,10 +106,8 @@ namespace TranslatorApp.DataAccessLayer.Concrete
                     return "Məlumat yoxdur!";
 
             }
-                    return translation;
+            return translation;
           }
-        
-
         public void Update(Word word)
         {
             _translateDbContext.Words.Update(word);

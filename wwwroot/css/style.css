@@ -7,7 +7,8 @@
 .containerPage {
     width: 100%;
     height: 100vh;
-    background: linear-gradient(to bottom left, #8dc7e2, #1434A4);
+    background: linear-gradient(#B4B4B3, transparent), linear-gradient(to top left, #939392, transparent), linear-gradient(to top right, #ffff, transparent);
+    background-blend-mode: screen;
 }
 .containerLogin {
     height: 100vh;
@@ -19,7 +20,7 @@
     position: fixed;
     width: 100%;
     height: 100vh;
-    background: #6495ED url('../css/img/load.gif') no-repeat center;
+    background: #838484 url('../css/img/load.gif') no-repeat center;
     z-index: 9999;
     background-size: 4rem 4rem;
 }

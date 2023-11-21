@@ -18,7 +18,7 @@ namespace TranslatorApp.Controllers
         public JsonResult TranslateWord(WordModel wordModel)
         {
             wordModel.wordResult = _wordService.GetTranslationResult(wordModel.fromL, wordModel.toL, wordModel.wordTranslate);
-            if (wordModel.wordResult == "Məlumat yoxdur!" || wordModel.wordResult == "Dili seçin!")
+            if (wordModel.wordResult == "Məlumat yoxdur!" || wordModel.wordResult == "Dili seçin!" || wordModel.wordResult == null)
             {
                 wordModel.translated = false;
                 return new JsonResult(Ok(wordModel));

@@ -22,29 +22,27 @@ namespace TranslatorApp.Controllers
             };
             return View(wordModel);
         }
-
         public IActionResult AddWord(WordModel word)
         {
             List<WordToListDTO> wordToLists = _wordService.Get();
             WordToAddDTO wordToAdd = new WordToAddDTO
             {
-                Azerbaycanca = word.wordtoadd.Azerbaycanca?.ToLower(),
-                Turkce = word.wordtoadd.Turkce?.ToLower(),
-                Tatarca = word.wordtoadd.Tatarca?.ToLower(),
-                Turkmence = word.wordtoadd.Turkmence?.ToLower(),
-                Ozbekce = word.wordtoadd.Ozbekce?.ToLower(),
-                Uygurca = word.wordtoadd.Uygurca?.ToLower(),
-                Qazaxca = word.wordtoadd.Qazaxca?.ToLower(),
-                Qirgizca = word.wordtoadd.Qirgizca?.ToLower()
+                Azerbaycan = word.wordtoadd.Azerbaycan?.ToLower(),
+                Turk = word.wordtoadd.Turk?.ToLower(),
+                Ozbek = word.wordtoadd.Ozbek?.ToLower(),
+                Qazax = word.wordtoadd.Qazax?.ToLower(),
+                Latin = word.wordtoadd.Latin?.ToLower(),
+                Rus = word.wordtoadd.Rus?.ToLower(),
+
             };
 
             int countInvalid = 0;
             bool existence = false;
             foreach (var item in wordToLists)
             {
-                if (wordToAdd.Azerbaycanca != null)
+                if (wordToAdd.Azerbaycan != null)
                 {
-                    if (item.Azerbaycanca.ToLower() == wordToAdd.Azerbaycanca.ToLower())
+                    if (item.Azerbaycan.ToLower() == wordToAdd.Azerbaycan.ToLower())
                     {
                         existence = true;
                     }
@@ -73,14 +71,12 @@ namespace TranslatorApp.Controllers
             int wordID = _wordService.GetintByAze(word.WordAzeSelected);
             WordToUpdateDTO wordToUpdate = new WordToUpdateDTO
             {
-                Azerbaycanca = word.WordAzeSelected,
-                Turkce = word.wordtoupdate.Turkce?.ToLower(),
-                Tatarca = word.wordtoupdate.Tatarca?.ToLower(),
-                Turkmence = word.wordtoupdate.Turkmence?.ToLower(),
-                Ozbekce = word.wordtoupdate.Ozbekce?.ToLower(),
-                Uygurca = word.wordtoupdate.Uygurca?.ToLower(),
-                Qazaxca = word.wordtoupdate.Qazaxca?.ToLower(),
-                Qirgizca = word.wordtoupdate.Qirgizca?.ToLower()
+                Azerbaycan = word.WordAzeSelected,
+                Turk = word.wordtoupdate.Turk?.ToLower(),
+                Ozbek = word.wordtoupdate.Ozbek?.ToLower(),
+                Qazax = word.wordtoupdate.Qazax?.ToLower(),
+                Latin = word.wordtoupdate.Latin?.ToLower(),
+                Rus = word.wordtoupdate.Rus?.ToLower(),
             };
             _wordService.Update(wordID, wordToUpdate);
             return RedirectToAction("AdminPage");

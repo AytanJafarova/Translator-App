@@ -13,38 +13,32 @@
          <form asp-action="UpdateWord" asp-controller="Admin" method="post" autocomplete="off">
         <div class="modal-body">
                 <div class="form-group mt-1">
-                  <label for="azeWord" class="text-primary">Azərbaycanca</label>
+                  <label for="azeWord" class="text-primary">Azərbaycan</label>
                   <input  type="text" class="form-control" id="azeUp" disabled>
                   <input asp-for="WordAzeSelected" class="d-none" type="text" id="azeUpHidden">
                 </div>
-                <div class="form-group mt-2">
-                  <label for="turkWord" class="text-primary">Türkcə</label>
-                  <input asp-for = "wordtoupdate.Turkce" type="text" class="form-control" id="trUp">
-                </div>
-                <div class="form-group mt-2">
-                  <label for="ozbekWord" class="text-primary">Özbəkcə</label>
-                  <input asp-for = "wordtoupdate.Ozbekce" type="text" class="form-control" id="ozbekUp">
-                </div>
-                <div class="form-group mt-2">
-                  <label for="qirgizWord" class="text-primary">Qırğızca</label>
-                  <input asp-for = "wordtoupdate.Qirgizca" type="text" class="form-control" id="qirgizUp">
-                </div>
-                <div class="form-group mt-2">
-                  <label for="tatarWord" class="text-primary">Tatarca</label>
-                  <input asp-for = "wordtoupdate.Tatarca" type="text" class="form-control" id="tatarUp">
-                </div>
-                <div class="form-group mt-2">
-                  <label for="turkmenWord" class="text-primary">Türkməncə</label>
-                  <input asp-for = "wordtoupdate.Turkmence" type="text" class="form-control" id="turkmenUp">
-                </div>
-                <div class="form-group mt-2">
-                  <label for="uygurWord" class="text-primary">Uyğurca</label>
-                  <input asp-for = "wordtoupdate.Uygurca" type="text" class="form-control" id="uygurUp">
-                </div>
                  <div class="form-group mt-2">
-                  <label for="qazaxWord" class="text-primary">Qazaxca</label>
-                  <input asp-for = "wordtoupdate.Qazaxca" type="text" class="form-control" id="qazaxUp">
+                  <label for="latinWord" class="text-primary">Latın</label>
+                  <input asp-for = "wordtoupdate.Latin" type="text" class="form-control" id="latinUp">
+                </div> 
+                <div class="form-group mt-2">
+                  <label for="qazaxWord" class="text-primary">Qazax</label>
+                  <input asp-for = "wordtoupdate.Qazax" type="text" class="form-control" id="qazaxUp">
                 </div>
+                <div class="form-group mt-2">
+                  <label for="ozbekWord" class="text-primary">Özbək</label>
+                  <input asp-for = "wordtoupdate.Ozbek" type="text" class="form-control" id="ozbekUp">
+                </div>
+                <div class="form-group mt-2">
+                  <label for="turkWord" class="text-primary">Türk</label>
+                  <input asp-for = "wordtoupdate.Turk" type="text" class="form-control" id="trUp">
+                </div> 
+                <div class="form-group mt-2">
+                  <label for="rusWord" class="text-primary">Rus</label>
+                  <input asp-for = "wordtoupdate.Rus" type="text" class="form-control" id="rusUp">
+                </div>
+                
+
         </div>
         <div class="modal-footer justify-content-center">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Ləğv et</button>
@@ -87,28 +81,22 @@
        <form asp-action="AddWord" asp-controller="Admin" method="post" autocomplete="off">
           <div class="modal-body">
                   <div class="form-group mt-1">
-                    <input asp-for = "wordtoadd.Azerbaycanca" type="text" class="form-control" id="azeAdd" placeholder="Azərbaycanca" required>
+                    <input asp-for = "wordtoadd.Azerbaycan" type="text" class="form-control" id="azeAdd" placeholder="Azərbaycan" required>
+                  </div>
+                  <div class="form-group mt-1">
+                    <input asp-for = "wordtoadd.Latin" type="text" class="form-control" id="latinAdd" placeholder="Latın">
                   </div>
                   <div class="form-group mt-2">
-                    <input asp-for = "wordtoadd.Turkce" type="text" class="form-control" id="trAdd" placeholder="Türkcə">
+                    <input asp-for= "wordtoadd.Qazax" type="text" class="form-control" id="qazaxAdd" placeholder="Qazax">
                   </div>
                   <div class="form-group mt-2">
-                    <input asp-for = "wordtoadd.Ozbekce" type="text" class="form-control" id="ozbekAdd" placeholder="Özbəkcə">
+                    <input asp-for = "wordtoadd.Ozbek" type="text" class="form-control" id="ozbekAdd" placeholder="Özbək">
                   </div>
                   <div class="form-group mt-2">
-                    <input asp-for = "wordtoadd.Qirgizca" type="text" class="form-control" id="qirgizAdd" placeholder="Qırğızca">
+                    <input asp-for = "wordtoadd.Turk" type="text" class="form-control" id="trAdd" placeholder="Türk">
                   </div>
                   <div class="form-group mt-2">
-                    <input asp-for = "wordtoadd.Tatarca" type="text" class="form-control" id="tatarAdd" placeholder="Tatarca">
-                  </div>
-                  <div class="form-group mt-2">
-                    <input asp-for = "wordtoadd.Turkmence" type="text" class="form-control" id="turkmenAdd" placeholder="Türkməncə">
-                  </div>
-                  <div class="form-group mt-2">
-                    <input asp-for="wordtoadd.Uygurca" type="text" class="form-control" id="uygurAdd" placeholder="Uyğurca">
-                  </div>
-                  <div class="form-group mt-2">
-                    <input asp-for= "wordtoadd.Qazaxca" type="text" class="form-control" id="qazaxAdd" placeholder="Qazaxca">
+                    <input asp-for = "wordtoadd.Rus" type="text" class="form-control" id="rusAdd" placeholder="Rus">
                   </div>
                   <div class="form-group mt-2 text-info" style="color:red;" id="lessInput">Ən az bir xarici dil daxil edin!</div>
             </div>
@@ -136,14 +124,12 @@
               <thead>
                   <tr>
                       <th>№</th>
-                      <th>Azərbaycanca</th>
-                      <th>Türkcə</th>
-                      <th>Özbəkcə</th>
-                      <th>Qırğızca</th>
-                      <th>Tatarca</th>
-                      <th>Türkməncə</th>
-                      <th>Uyğurca</th>
-                      <th>Qazaxca</th>
+                      <th>Azərbaycan</th>
+                      <th>Latın</th>
+                      <th>Qazax</th>
+                      <th>Özbək</th>
+                      <th>Türk</th>
+                      <th>Rus</th>
                       <th>Redaktə et</th>
                   </tr>
               </thead>
@@ -155,14 +141,12 @@
                 {
                     <tr>
                         <td>@counter</td>
-                        <td>@word.Azerbaycanca</td>
-                        <td>@word.Turkce</td>
-                        <td>@word.Ozbekce</td>
-                        <td>@word.Qirgizca</td>
-                        <td>@word.Tatarca</td>
-                        <td>@word.Turkmence</td>
-                        <td>@word.Uygurca</td>
-                        <td>@word.Qazaxca</td>
+                        <td>@word.Azerbaycan</td>
+                        <td>@word.Latin</td>
+                        <td>@word.Qazax</td>
+                        <td>@word.Ozbek</td>
+                        <td>@word.Turk</td>
+                        <td>@word.Rus</td>
                         <td>
                             <i onclick="updateFill(this)" data-bs-toggle="modal" data-bs-target="#updateModal" class="fas fa-edit btn-update" title="Update"></i>
                             <i onclick="deleteWord(this)" data-bs-toggle="modal" data-bs-target="#deleteModal" class="fas fa-trash-alt btn-delete" title="Delete"></i>
