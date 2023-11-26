@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "HE51Vsz5L9l3VJ2RubETluc9Yb83CTa6pMmyXIflwbc=",
+  "Hash": "YVlNL5wRq0Ni5cOMiSSF90njl85d1aoG/XHGvXnWPF0=",
   "Source": "TranslatorApp",
   "BasePath": "_content/TranslatorApp",
   "Mode": "Default",
@@ -287,6 +287,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\img\\load.gif"
+    },
+    {
+      "Identity": "C:\\Users\\A.J\\Desktop\\TranslatorApp\\wwwroot\\css\\img\\logo.png",
+      "SourceId": "TranslatorApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\A.J\\Desktop\\TranslatorApp\\wwwroot\\",
+      "BasePath": "_content/TranslatorApp",
+      "RelativePath": "css/img/logo.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\img\\logo.png"
     },
     {
       "Identity": "C:\\Users\\A.J\\Desktop\\TranslatorApp\\wwwroot\\css\\img\\pngtree-online-translator-chat-language-foreign-png-image_6031055.png",
